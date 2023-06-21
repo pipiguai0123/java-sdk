@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!-- 仓库信息 -->
+    <scm>
+        <connection>https://github.com/pipiguai0123/java-sdk.git</connection>
+        <developerConne6ction>scm:git@github.com:pipiguai0123/java-sdk.git
+        </developerConnection>
+        <url>https://github.com/pipiguai0123/java-sdk</url>
+    </scm>
+    <!-- 开发人员信息 -->
+    <developers>
+        <developer>
+            <id>pipiguai</id>
+            <name>pipiguai</name>
+            <email>1962821461@qq.com</email>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    <!-- 发布项目到 sonatype -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>coinpay</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.coinpay</groupId>
+    <artifactId>coinpay-sdk-spring-boot-starter</artifactId>
+    <version>1.0</version>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.7.8</spring-boot.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.83</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
